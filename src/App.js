@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import useFakeData from "./useFakeData";
 
-function App() {
+const App = () => {
+  const [title, setTitle] = useState("");
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        type="text"
+        value={title}
+        onChange={(evt) => {
+          setTitle(evt.target.value);
+        }}
+      />
+      <h1>{useFakeData(title).id}</h1>
+      <p>{useFakeData(title).body}</p>
     </div>
   );
-}
+};
 
 export default App;
