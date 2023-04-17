@@ -4,6 +4,7 @@ import useFakeData from "./useFakeData";
 const App = () => {
   const [title, setTitle] = useState("");
 
+  let data = useFakeData(title);
 
   return (
     <div className="App">
@@ -14,8 +15,8 @@ const App = () => {
           setTitle(evt.target.value);
         }}
       />
-      <h1>{useFakeData(title).id}</h1>
-      <p>{useFakeData(title).body}</p>
+      <h1>{data.id}</h1>
+      <p>{data.body}</p>
     </div>
   );
 };
