@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 
 export function Test() {
   const [test, setTest] = useState("");
+
   useEffect(() => {
     console.log("մտավ թեստի մեջ");
-    return () => console.log('ջնջեց')
-  }, []);
+    return () => console.log("ջնջեց");
+  }, [test]);
+
   return (
     <div>
       <input
